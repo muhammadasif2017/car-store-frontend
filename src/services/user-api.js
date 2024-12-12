@@ -1,8 +1,9 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3001/api/login";
+import { BASE_URL } from "../utils/constant";
+const apiUrl = `${BASE_URL}/api/login`;
 
 const loginUser = (newObject) => {
-  const request = axios.post(baseUrl, newObject);
+  const request = axios.post(apiUrl, newObject);
   return request
     .then((response) => response.data)
     .catch((error) => {

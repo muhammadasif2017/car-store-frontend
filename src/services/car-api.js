@@ -1,13 +1,15 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3001/api/cars/";
+import { BASE_URL } from "../utils/constant";
+
+const apiUrl = `${BASE_URL}/api/cars/`;
 
 const getAllCars = () => {
-  const request = axios.get(baseUrl);
+  const request = axios.get(apiUrl);
   return request.then((response) => response.data);
 };
 
 const createCar = (newObject) => {
-  const request = axios.post(baseUrl, newObject);
+  const request = axios.post(apiUrl, newObject);
   return request
     .then((response) => response.data)
     .catch((error) => {
